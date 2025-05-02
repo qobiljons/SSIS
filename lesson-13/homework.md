@@ -4,14 +4,25 @@ Process files in a folder whose names start with **"data_"** and end with **".tx
   - `data_20250125.txt`, `data_20250126.txt`
 
 ### Example Data:
-![Image 1](images/image1.png)
 
+# Example File Data (data_20250125.txt)
+Assume this file contains emplyee details
+| EmployeeID | Name         | Department | Salary  |
+|-----------:|:-------------|:-----------|--------:|
+|        101 | John Doe     | HR         | 50,000  |
+|        102 | Jane Smith   | IT         | 60,000  |
+|        103 | Alice Brown  | Finance    | 55,000  |
+|        104 | Robert Black | Marketing  | 45,000  |
 ---
 
 ### Perform a **Fuzzy Lookup** using a SQL **Employee** table to verify if the data exists in the SQL database.
 
 #### Lookup Table Example:
-![Image 2](images/image2.png)
+| EmployeeID | Name        | Department | Salary |
+|-----------:|:------------|:-----------|-------:|
+|        101 | John Doe    | HR         | 50,000 |
+|        102 | Jane Smith  | IT         | 60,000 |
+|        105 | Sarah White | Sales      | 52,000 |
 
 ---
 
@@ -22,5 +33,10 @@ Process files in a folder whose names start with **"data_"** and end with **".tx
 - Load it into an **error table** with an additional column **Definition** containing the value `"No exists in SQL table"`.
 
 #### Example Error Table:
-![Image 3](images/image3.png)
+##### Employees Not Found in SQL Table
+
+| EmployeeID | Name         | Department | Salary  | Status               |
+|-----------:|:-------------|:-----------|--------:|:---------------------|
+|        103 | Alice Brown  | Finance    | 55,000  | Not in SQL table     |
+|        104 | Robert Black | Marketing  | 45,000  | Not in SQL table     |
 ****
