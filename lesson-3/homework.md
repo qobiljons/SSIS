@@ -36,7 +36,16 @@ This SSIS package performs the following tasks to calculate, filter, and export 
 ## 4. **Sample Data and Structure**
 
 ### 4.1 Salary Fact Table
-![Salary Fact Table](images/image1.png)
+### 1. Salary Fact Table (First Table)
+
+| ID | Name           | Age | Salary |
+|----|----------------|-----|--------|
+| 1  | John Smith     | 30  | 50000  |
+| 2  | Jane Doe       | 28  | 60000  |
+| 3  | Mike Ross      | 35  | 45000  |
+| 4  | Rachel Zane    | 33  | 75000  |
+| 5  | Donna Paulsen  | 40  | 85000  |
+
 
 ### 4.2 Second Salary Fact Table
 ![Second Salary Fact Table](images/image2.png)
