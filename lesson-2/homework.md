@@ -17,11 +17,36 @@ This SSIS package integrates data from multiple sources (Flat File, Excel, and C
 
 #### Sample Data
 
-![Sample Data 1](images/image1.png)
+## 1. Text File  
+**File Name:** `customer1.txt`  
 
-![Sample Data 2](images/image2.png)
+| CustomerID | Name    | Salary |
+|------------|---------|--------|
+| 101        | Alice   | 500    |
+| 102        | Bob     | 300    |
+| 103        | Charlie | 250    |
 
----
+
+## 2. Excel File
+**File Name:** CustomerData.xlsx  
+**Sheet Name:** Sheet1  
+
+| CustomerID | Name    | Salary |
+|------------|---------|--------|
+| 104        | David   | 500    |
+| 105        | Emily   | 300    |
+| 106        | Frank   | 200    |
+
+## 3. CSV File  
+**File Name:** `CustomerData.csv`  
+**Format:** Comma-separated values  
+
+| CustomerID | Name   | Salary |
+|------------|--------|--------|
+| 107        | Grace  | 500    |
+| 108        | Hannah | 300    |
+| 109        | Ian    | 100    |
+
 
 ## 2. **Target Table**
 
