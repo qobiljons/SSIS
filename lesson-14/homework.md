@@ -1,16 +1,53 @@
 # SSIS Task Overview: Handling Missing Customers & Error Logging
 
 ### Task Objective:
-- Load a **Customers** file into a **SQL table**.
-![Image 1](images/image1.png)
+# Task Overview: Loading Customers Data into SQL Table with Lookup Validation
+
+## 1. Load the Customers File into SQL Table
+
+The provided **Customers file** contains the following data:
+
+| **CustomerID** | **CustomerName** | **Email**            | **Phone**       | **Address**  |
+|----------------|------------------|----------------------|-----------------|--------------|
+| 101            | John Doe         | john@example.com     | 123-456-7890    | 123 Main St  |
+| 102            | Alice Smith      | alice@example.com    | 987-654-3210    | 456 Oak St   |
+| 103            | Bob Johnson      | bob@example.com      | 555-123-4567    | 789 Pine St  |
+| 104            | Emma Watson      | emma@example.com     | 111-222-3333    | 101 Birch St |
 
 ---
 
-### Validate each **CustomerID** against a **Lookup Table**:
-- If **exists**, load into the **Customers Table**.
-- If **not exists**, load into the **Customers_ErrorTable**.
-![Image 2](images/image2.png)
-![Image 3](images/image3.png)
+## 2. Validate Each CustomerID Against a Lookup Table
+
+- The **Lookup Table** contains the following data:
+
+| **CustomerID** | **Status** |
+|----------------|------------|
+| 101            | Active     |
+| 102            | Active     |
+| 104            | Active     |
+
+---
+
+## 3. Load Data Logic
+
+1. **If CustomerID exists in Lookup Table** (Status = Active), load data into the **Customers Table**.
+
+   ### Customers Table (Valid Data):
+
+   | **CustomerID** | **CustomerName** | **Email**            | **Phone**       | **Address**  |
+   |----------------|------------------|----------------------|-----------------|--------------|
+   | 101            | John Doe         | john@example.com     | 123-456-7890    | 123 Main St  |
+   | 102            | Alice Smith      | alice@example.com    | 987-654-3210    | 456 Oak St   |
+   | 104            | Emma Watson      | emma@example.com     | 111-222-3333    | 101 Birch St |
+
+2. **If CustomerID does not exist in Lookup Table**, load into the **Customers_ErrorTable**.
+
+   ### Customers ErrorTable (Missing in Lookup):
+
+   | **CustomerID** | **CustomerName** | **Email**            | **Phone**       | **Address**  | **ErrorReason**       |
+   |----------------|------------------|----------------------|-----------------|--------------|-----------------------|
+   | 103            | Bob Johnson      | bob@example.com      | 555-123-4567    | 789 Pine St  | CustomerID not found  |
+
 
 ---
 
