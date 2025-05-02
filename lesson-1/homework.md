@@ -7,17 +7,29 @@ This SSIS package integrates data from an Excel file and a Flat File, performs t
 ## 1. **Data Sources**
 
 ### 1.1 Excel File
-- Data starts at **Row 4** (ignore rows above).
-- **Column names** are present in **Row 5**.
-  
-  ![Excel Data](images/image1.png)
 
-### 1.2 Flat File
-- Contains a **header row** that matches the schema of the Excel file.
+- **Data starts at Row 4**, ignore rows above it.
+- **Column names are in Row 5**.
 
-  ![Flat File Data](images/image2.png)
+#### Excel Data Sample:
+
+| **ID** | **Name** | **Age** | **D** | **E** |
+|--------|----------|---------|-------|-------|
+| 1      | Alice    | 30      |       |       |
+| 2      | Bob      | 25      |       |       |
 
 ---
+
+### 1.2 Flat File
+
+- The flat file contains a **header row** that matches the schema of the Excel file.
+
+#### Flat File Data Sample:
+
+| **ID** | **Name** | **Age** |
+|--------|----------|---------|
+| 3      | Charlie  | 35      |
+| 4      | David    | 28      |
 
 ## 2. **SQL Table Configuration**
 
