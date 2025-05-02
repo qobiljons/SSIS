@@ -2,7 +2,12 @@
 
 The task involves reading multiple `.txt` files with dynamic names (e.g., `customer1.txt`, `customer2.txt`) and loading their data into dynamically named SQL tables (e.g., `customer1`, `customer2`), where each file corresponds to a target table.
 
-![Image 1](images/image1.png)
+| CustomerID | Name    | Salary |
+|------------|---------|--------|
+| 101        | Alice   | 500    |
+| 102        | Bob     | 300    |
+| 103        | Charlie | 250    |
+
 
 ---
 
