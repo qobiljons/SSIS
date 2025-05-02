@@ -48,7 +48,16 @@ This SSIS package performs the following tasks to calculate, filter, and export 
 
 
 ### 4.2 Second Salary Fact Table
-![Second Salary Fact Table](images/image2.png)
+### 2. Second Salary Table (Second Table)
+
+| ID  | Name              | Department | Salary |
+|-----|-------------------|------------|--------|
+| 101 | Alex Pearson      | IT         | 55000  |
+| 102 | Samantha Harvey   | HR         | 67000  |
+| 103 | Harvey Specter    | Legal      | 90000  |
+| 104 | Louis Litt        | Legal      | 80000  |
+| 105 | Sheila Sazs       | Finance    | 60000  |
+
 
 ---
 
