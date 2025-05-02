@@ -1,12 +1,18 @@
 # SSIS Task: Incremental Load Using Slowly Changing Dimension (SCD) Type 0 with IsActive Flag
 
 ### **Source Sample Data**
-![Image 2](images/image2.png)
-
+| StudentID | FirstName | LastName | DateOfBirth  | Gender | Course | RegistrationDate | Email                 | IsActive |
+|-----------|-----------|----------|--------------|--------|--------|------------------|-----------------------|----------|
+| 1         | John      | Doe      | 2000-05-12   | M      | CS     | 2025-01-10       | john.doe@email.com    | 1        |
+| 2         | Jane      | Smith    | 2002-08-20   | F      | Math   | 2025-01-11       | jane.smith@email.com  | 1        |
 ---
 
 ### **Existing Target Data**
-![Image 1](images/image1.png)
+| StudentID | FirstName | LastName | DateOfBirth | Gender | Course | RegistrationDate | Email                   |
+|-----------|-----------|----------|-------------|--------|--------|------------------|-------------------------|
+| 1         | John      | Doe      | 2000-05-12  | M      | IT     | 2025-01-10       | john.doe@email.com      |
+| 2         | Jane      | Smith    | 2002-08-20  | F      | Math   | 2025-01-11       | jane.smith@email.com    |
+| 3         | Alice     | Brown    | 2001-09-15  | F      | Physics| 2025-01-12       | alice.brown@email.com   |
 
 ---
 
@@ -23,4 +29,9 @@
 
 ### **Result:**
 The final result should look like this:
-![Image 3](images/image3.png)
+| StudentID | FirstName | LastName | DateOfBirth  | Gender | Course  | RegistrationDate | Email                     | IsActive | LoadDate           |
+|----------:|:----------|:---------|:-------------|:-------|:--------|:-----------------|:--------------------------|:---------|:-------------------|
+|         1 | John      | Doe      | 2000-05-12   | M      | CS      | 2025-01-10       | john.doe@email.com        | 0        | 2025-01-30 10:00:00 |
+|         1 | John      | Doe      | 2000-05-12   | M      | IT      | 2025-01-10       | john.doe@email.com        | 1        | 2025-01-31 14:30:00 |
+|         2 | Jane      | Smith    | 2002-08-20   | F      | Math    | 2025-01-11       | jane.smith@email.com      | 1        | 2025-01-30 10:00:00 |
+|         3 | Alice     | Brown    | 2001-09-15   | F      | Physics | 2025-01-12       | alice.brown@email.com     | 1        | 2025-01-31 14:30:00 |
