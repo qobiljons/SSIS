@@ -65,6 +65,11 @@ This SSIS package performs the following tasks to calculate, filter, and export 
 
 - The result from the **Script Task** and the data in the **destination file** should look like this:
 
-![Expected Output](images/image3.png)
+| ID  | Name              | Department | Salary |
+|-----|-------------------|------------|--------|
+| 102 | Samantha Harvey   | HR         | 67000  |
+| 103 | Harvey Specter    | Legal      | 90000  |
+| 104 | Louis Litt        | Legal      | 80000  |
+
 
 ---
